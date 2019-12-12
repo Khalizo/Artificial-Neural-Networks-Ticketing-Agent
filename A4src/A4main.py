@@ -17,13 +17,31 @@ from sklearn.exceptions import ConvergenceWarning
 # y_axis = [100,200,300,400,500]
 # plt.barh(x_axis,y_axis, color ='green', label="label for legend")
 # plt.title('The title')
-# plt.xlabel("hello")
-# plt.ylabel("lol")
+
 # plt.legend(facecolor="gra y", shadow=True, title="title for legend")
 
 
+# ***************Encoding The Data***************
+# load data set
+tickets = pd.read_csv('../tickets.csv')
+categories = tickets["Response Team"]
+inputs = tickets.loc[:, "Request":"Students"]
 
-# ***************Setting Up The Network***************
+# encode the X values
+X = array(inputs)
+no_bool = X == 'No'
+yes_bool = X == 'Yes'
+X[no_bool] = 0
+X[yes_bool] = 1
+
+# encoding the y values with a one - hot encoding method
+y = array(pd.get_dummies(categories))
+
+# ***************Split The Data Between Training and Testing***************
+# creating training and test data sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)  # training and testing split 80/20
+
+# ***************Setting Up The Models***************
 # MLPClassifier
 solver = 'sgd'  # stochastic gradient descent
 learning_rate = 'constant'  # default
@@ -41,16 +59,16 @@ max_iter: int  # set number of iterations
 
 # setting up MLP params for models with different numbers of hidden units
 params = [{'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (4,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000},
-          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (3,), 'momentum': 0.5, 'activation': 'logistic',
+           'hidden_layer_sizes': (1,), 'momentum': 0.5, 'activation': 'logistic',
            'n_iter_no_change': 5000, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
            'hidden_layer_sizes': (2,), 'momentum': 0.5, 'activation': 'logistic',
            'n_iter_no_change': 5000, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (1,), 'momentum': 0.5, 'activation': 'logistic',
+           'hidden_layer_sizes': (3,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000},
+          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (4,), 'momentum': 0.5, 'activation': 'logistic',
            'n_iter_no_change': 5000, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
            'hidden_layer_sizes': (5,), 'momentum': 0.5, 'activation': 'logistic',
@@ -71,7 +89,7 @@ params = [{'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
            'hidden_layer_sizes': (10,), 'momentum': 0.5, 'activation': 'logistic',
            'n_iter_no_change': 5000, 'max_iter': 20000}]
 
-labels = ["4 hidden units", "3 hidden units", "2 hidden units", "1 hidden units","5 hidden units",
+labels = ["1 hidden unit", "2 hidden units", "3 hidden units", "4 hidden units","5 hidden units",
           "6 hidden units", "7 hidden units", "8 hidden units", "9 hidden units","10 hidden units"]
 
 plot_args = [{'c': 'red', 'linestyle': '-'},
@@ -87,7 +105,7 @@ plot_args = [{'c': 'red', 'linestyle': '-'},
 
 
 # Function for plotting the different models
-def plot_on_dataset(X, y, ax, name):
+def plot_on_dataset(X, y, X_test, y_test, ax, name):
     # for each dataset, plot learning for each learning strategy
     print("\nlearning on dataset %s" % name)
     ax.set_title(name)
@@ -96,8 +114,7 @@ def plot_on_dataset(X, y, ax, name):
     # initiating the models
     for label, param in zip(labels, params):
         print("training: %s" % label)
-        mlp = MLPClassifier(random_state=0,
-                            max_iter=max_iter, **param)
+        mlp = MLPClassifier(**param)
 
         # some parameter combinations will not converge as can be seen on the
         # plots so they are ignored here
@@ -109,55 +126,20 @@ def plot_on_dataset(X, y, ax, name):
         mlps.append(mlp)
         print("Training set score: %f" % mlp.score(X, y))
         print("Training set loss: %f" % mlp.loss_)
+        print("Test set score: %f" % mlp.score(X_test, y_test))
     for mlp, label, args in zip(mlps, labels, plot_args):
         ax.plot(mlp.loss_curve_, label=label, **args)
 
 
+fig, axes = plt.subplots(figsize=(15, 10))
+plot_on_dataset(X_train, y_train, X_test, y_test, ax=axes, name='Loss vs No. Epochs For Models With Varying Hidden Units')
 
-# hidden units 2
-clf = MLPClassifier(solver='sgd',
-                    learning_rate_init=0.5, hidden_layer_sizes=(4,),
-                    verbose=True, momentum=0.5,
-                    activation='logistic',
-                    n_iter_no_change=5000, max_iter=20000)
+fig.legend(axes.get_lines(), labels, ncol=3, loc="best", shadow =True)
+plt.xlabel("No. of Epochs")
+plt.ylabel("Loss")
+plt.show()
 
-
-# ***************Encoding The Data***************
-# load data set
-tickets = pd.read_csv('../tickets.csv')
-categories = tickets["Response Team"]
-inputs = tickets.loc[:, "Request":"Students"]
-
-# encode the X values
-X = array(inputs)
-no_bool = X == 'No'
-yes_bool = X == 'Yes'
-X[no_bool] = 0
-X[yes_bool] = 1
-
-# encoding the y values
-y = array(pd.get_dummies(categories))
-
-# ***************Split The Data Between Training and Testing***************
-# creating training and test data sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)  # training and testing split 80/20
-print(X_train.shape, y_train.shape)
-print(X_test.shape, y_test.shape)
-
-
-# fit a backprogation algorithm
-clf.fit(X_train, y_train)
-
-# compute the output
-predictions = clf.predict(X_test)
-proba = clf.predict_proba(X_test)
-print(predictions[0:5])
-print(proba[0:5])
-print(clf.score(X_test, y_test))
-joblib.dump(clf, '../mynetwork.joblib')
-
-
-
+# joblib.dump(clf, '../mynetwork.joblib')
 
 # ***************Advanced Requirement***************
 # fit a linear regression model
