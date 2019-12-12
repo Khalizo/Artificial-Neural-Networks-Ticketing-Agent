@@ -1,3 +1,4 @@
+import warnings
 import numpy as np
 import sklearn as sk
 import pandas as pd
@@ -8,6 +9,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.externals import joblib
 from matplotlib import pyplot as plt
 from sklearn.neural_network import MLPClassifier
+from sklearn.preprocessing import MinMaxScaler
+from sklearn import datasets
+from sklearn.exceptions import ConvergenceWarning
 
 # x_axis = [1, 2, 3 ,4 ,5]
 # y_axis = [100,200,300,400,500]
@@ -33,6 +37,82 @@ verbose = True  # To see the iterations
 tol: float  # When the loss or score is not improving by
 n_iter_no_change: int  # number of iterations with no change
 max_iter: int  # set number of iterations
+
+
+# setting up MLP params for models with different numbers of hidden units
+params = [{'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (4,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000},
+          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (3,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000},
+          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (2,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000},
+          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (1,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000},
+          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (5,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000},
+          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (6,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000},
+          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (7,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000},
+          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (8,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000},
+          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (9,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000},
+          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
+           'hidden_layer_sizes': (10,), 'momentum': 0.5, 'activation': 'logistic',
+           'n_iter_no_change': 5000, 'max_iter': 20000}]
+
+labels = ["4 hidden units", "3 hidden units", "2 hidden units", "1 hidden units","5 hidden units",
+          "6 hidden units", "7 hidden units", "8 hidden units", "9 hidden units","10 hidden units"]
+
+plot_args = [{'c': 'red', 'linestyle': '-'},
+             {'c': 'red', 'linestyle': '--'},
+             {'c': 'blue', 'linestyle': '-'},
+             {'c': 'blue', 'linestyle': '--'},
+             {'c': 'green', 'linestyle': '-'},
+             {'c': 'green', 'linestyle': '--'},
+             {'c': 'black', 'linestyle': '-'},
+             {'c': 'black', 'linestyle': '--'},
+             {'c': 'magenta', 'linestyle': '-'},
+             {'c': 'magenta', 'linestyle': '--'}]
+
+
+# Function for plotting the different models
+def plot_on_dataset(X, y, ax, name):
+    # for each dataset, plot learning for each learning strategy
+    print("\nlearning on dataset %s" % name)
+    ax.set_title(name)
+
+    mlps = [] # list of models
+    # initiating the models
+    for label, param in zip(labels, params):
+        print("training: %s" % label)
+        mlp = MLPClassifier(random_state=0,
+                            max_iter=max_iter, **param)
+
+        # some parameter combinations will not converge as can be seen on the
+        # plots so they are ignored here
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=ConvergenceWarning,
+                                    module="sklearn")
+            mlp.fit(X, y)
+
+        mlps.append(mlp)
+        print("Training set score: %f" % mlp.score(X, y))
+        print("Training set loss: %f" % mlp.loss_)
+    for mlp, label, args in zip(mlps, labels, plot_args):
+        ax.plot(mlp.loss_curve_, label=label, **args)
+
+
 
 # hidden units 2
 clf = MLPClassifier(solver='sgd',
