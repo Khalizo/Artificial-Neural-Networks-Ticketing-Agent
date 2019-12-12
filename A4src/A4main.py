@@ -23,7 +23,7 @@ from sklearn.exceptions import ConvergenceWarning
 
 # ***************Encoding The Data***************
 # load data set
-tickets = pd.read_csv('../tickets.csv')
+tickets = pd.read_csv('../resource/tickets.csv')
 categories = tickets["Response Team"]
 inputs = tickets.loc[:, "Request":"Students"]
 
@@ -56,41 +56,45 @@ tol: float  # When the loss or score is not improving by
 n_iter_no_change: int  # number of iterations with no change
 max_iter: int  # set number of iterations
 
-
 # setting up MLP params for models with different numbers of hidden units
 params = [{'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (1,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000},
+           'hidden_layer_sizes': (1,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
+           'n_iter_no_change': 10, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (2,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000},
+           'hidden_layer_sizes': (2,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
+           'n_iter_no_change': 10, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (3,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000},
+           'hidden_layer_sizes': (3,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
+           'n_iter_no_change': 10, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (4,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000},
+           'hidden_layer_sizes': (4,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
+           'n_iter_no_change': 10, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (5,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000},
+           'hidden_layer_sizes': (5,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
+           'n_iter_no_change': 10, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (6,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000},
+           'hidden_layer_sizes': (6,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
+           'n_iter_no_change': 10, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (7,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000},
+           'hidden_layer_sizes': (7,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
+           'n_iter_no_change': 10, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (8,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000},
+           'hidden_layer_sizes': (8,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
+           'n_iter_no_change': 10, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (9,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000},
+           'hidden_layer_sizes': (9,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
+           'n_iter_no_change': 10, 'max_iter': 20000},
           {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (10,), 'momentum': 0.5, 'activation': 'logistic',
-           'n_iter_no_change': 5000, 'max_iter': 20000}]
+           'hidden_layer_sizes': (10,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
+           'n_iter_no_change': 10, 'max_iter': 20000}]
 
-labels = ["1 hidden unit", "2 hidden units", "3 hidden units", "4 hidden units","5 hidden units",
-          "6 hidden units", "7 hidden units", "8 hidden units", "9 hidden units","10 hidden units"]
+saved_networks = ['../hidden_unit_models/mynetwork_1.joblib', '../hidden_unit_models/mynetwork_2.joblib',
+                  '../hidden_unit_models/mynetwork_3.joblib', '../hidden_unit_models/mynetwork_4.joblib',
+                  '../hidden_unit_models/mynetwork_5.joblib', '../hidden_unit_models/mynetwork_6.joblib',
+                  '../hidden_unit_models/mynetwork_7.joblib', '../hidden_unit_models/mynetwork_8.joblib',
+                  '../hidden_unit_models/mynetwork_9.joblib', '../hidden_unit_models/mynetwork_10.joblib']
+labels = ["1 hidden unit", "2 hidden units", "3 hidden units", "4 hidden units", "5 hidden units",
+          "6 hidden units", "7 hidden units", "8 hidden units", "9 hidden units", "10 hidden units"]
 
 plot_args = [{'c': 'red', 'linestyle': '-'},
              {'c': 'red', 'linestyle': '--'},
@@ -103,16 +107,31 @@ plot_args = [{'c': 'red', 'linestyle': '-'},
              {'c': 'magenta', 'linestyle': '-'},
              {'c': 'magenta', 'linestyle': '--'}]
 
+file_name = '../data/hidden_unit_model_results_demo.csv'
+
+
+# function for exporting to CSV
+def export_to_csv(model_name, train_score, train_loss, test_score, iterations, filename):
+    results = pd.DataFrame({'Model Name': model_name, 'Training Set Score': train_score,
+                            'Training Set Loss': train_loss,
+                            'Test Set Score': test_score, 'Iterations': iterations})
+    results.to_csv(filename)
+
 
 # Function for plotting the different models
-def plot_on_dataset(X, y, X_test, y_test, ax, name):
+def plot_on_models(X, y, X_test, y_test, ax, name):
     # for each dataset, plot learning for each learning strategy
     print("\nlearning on dataset %s" % name)
     ax.set_title(name)
 
-    mlps = [] # list of models
+    mlps = []  # list of models
+    train_scores = []
+    train_losses = []
+    test_scores = []
+    iterations = []
+
     # initiating the models
-    for label, param in zip(labels, params):
+    for label, param, saved_network in zip(labels, params, saved_networks):
         print("training: %s" % label)
         mlp = MLPClassifier(**param)
 
@@ -122,31 +141,43 @@ def plot_on_dataset(X, y, X_test, y_test, ax, name):
             warnings.filterwarnings("ignore", category=ConvergenceWarning,
                                     module="sklearn")
             mlp.fit(X, y)
-
+            joblib.dump(mlp, saved_network)
+        # add models and data points to their respective arrays
         mlps.append(mlp)
+        train_scores.append(mlp.score(X, y))
+        train_losses.append(mlp.loss_)
+        test_scores.append(mlp.score(X_test, y_test))
+        iterations.append(mlp.n_iter_)
+
         print("Training set score: %f" % mlp.score(X, y))
         print("Training set loss: %f" % mlp.loss_)
         print("Test set score: %f" % mlp.score(X_test, y_test))
+        print("Iterations: %f" % mlp.n_iter_)
+
+
     for mlp, label, args in zip(mlps, labels, plot_args):
         ax.plot(mlp.loss_curve_, label=label, **args)
 
+    export_to_csv(labels, train_scores, train_losses, test_scores, iterations, file_name)
 
+
+# ***************Set up plot***************
 fig, axes = plt.subplots(figsize=(15, 10))
-plot_on_dataset(X_train, y_train, X_test, y_test, ax=axes, name='Loss vs No. Epochs For Models With Varying Hidden Units')
-
-fig.legend(axes.get_lines(), labels, ncol=3, loc="best", shadow =True)
+plot_on_models(X_train, y_train, X_test, y_test, ax=axes,
+                name='Loss vs No. Epochs For Models With Varying Hidden Units')
+fig.legend(axes.get_lines(), labels, ncol=3, loc="best", shadow=True)
 plt.xlabel("No. of Epochs")
 plt.ylabel("Loss")
 plt.show()
+plt.savefig('../data/Hidden_Unit_models.png_demo')
 
-# joblib.dump(clf, '../mynetwork.joblib')
 
-# ***************Advanced Requirement***************
+
+
 # fit a linear regression model
 lm = linear_model.LinearRegression()
 model = lm.fit(X_train, y_train)
 predictions_L = lm.predict(X_test)
-
 
 ## The line / model
 # plt.scatter(y_test, proba)
