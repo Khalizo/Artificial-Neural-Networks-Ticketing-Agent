@@ -9,21 +9,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.externals import joblib
 from matplotlib import pyplot as plt
 from sklearn.neural_network import MLPClassifier
-from sklearn.preprocessing import MinMaxScaler
-from sklearn import datasets
 from sklearn.exceptions import ConvergenceWarning
-
-# x_axis = [1, 2, 3 ,4 ,5]
-# y_axis = [100,200,300,400,500]
-# plt.barh(x_axis,y_axis, color ='green', label="label for legend")
-# plt.title('The title')
-
-# plt.legend(facecolor="gra y", shadow=True, title="title for legend")
-
+from sklearn.model_selection import GridSearchCV
+from A4src.configuration import *
 
 # ***************Encoding The Data***************
 # load data set
-tickets = pd.read_csv('../resource/tickets.csv')
+tickets = pd.read_csv('../data/tickets.csv')
 categories = tickets["Response Team"]
 inputs = tickets.loc[:, "Request":"Students"]
 
@@ -50,65 +42,31 @@ hidden_layer_sizes: tuple  # length = n_layers - 2 #we only need 1 (n_units,)
 activation = 'logistic'  # the logistic sigmoid function, others available
 momentum: float  # Momentum
 verbose = True  # To see the iterations
-
-# a different stopping approach
 tol: float  # When the loss or score is not improving by
 n_iter_no_change: int  # number of iterations with no change
 max_iter: int  # set number of iterations
 
-# setting up MLP params for models with different numbers of hidden units
-params = [{'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (1,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
-           'n_iter_no_change': 10, 'max_iter': 20000},
-          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (2,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
-           'n_iter_no_change': 10, 'max_iter': 20000},
-          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (3,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
-           'n_iter_no_change': 10, 'max_iter': 20000},
-          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (4,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
-           'n_iter_no_change': 10, 'max_iter': 20000},
-          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (5,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
-           'n_iter_no_change': 10, 'max_iter': 20000},
-          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (6,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
-           'n_iter_no_change': 10, 'max_iter': 20000},
-          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (7,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
-           'n_iter_no_change': 10, 'max_iter': 20000},
-          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (8,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
-           'n_iter_no_change': 10, 'max_iter': 20000},
-          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (9,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
-           'n_iter_no_change': 10, 'max_iter': 20000},
-          {'solver': 'sgd', 'momentum': 0, 'learning_rate_init': 0.5,
-           'hidden_layer_sizes': (10,), 'momentum': 0.5, 'activation': 'logistic', 'tol': 0.00001,
-           'n_iter_no_change': 10, 'max_iter': 20000}]
+# initialise MLP classifier
+clf = MLPClassifier(solver='sgd',
+                    learning_rate_init=0.5, hidden_layer_sizes=(5,),
+                    verbose=False, momentum=0.3, tol=0.00001,
+                    activation='logistic',
+                    n_iter_no_change=10, max_iter=10000)
 
-saved_networks = ['../hidden_unit_models/mynetwork_1.joblib', '../hidden_unit_models/mynetwork_2.joblib',
-                  '../hidden_unit_models/mynetwork_3.joblib', '../hidden_unit_models/mynetwork_4.joblib',
-                  '../hidden_unit_models/mynetwork_5.joblib', '../hidden_unit_models/mynetwork_6.joblib',
-                  '../hidden_unit_models/mynetwork_7.joblib', '../hidden_unit_models/mynetwork_8.joblib',
-                  '../hidden_unit_models/mynetwork_9.joblib', '../hidden_unit_models/mynetwork_10.joblib']
-labels = ["1 hidden unit", "2 hidden units", "3 hidden units", "4 hidden units", "5 hidden units",
-          "6 hidden units", "7 hidden units", "8 hidden units", "9 hidden units", "10 hidden units"]
+# Implementing Grid Search to find the best learning rate and momentum
+param_grid = [{'solver': ['sgd'], 'momentum': [0.001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+               'learning_rate_init': [0.001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]}]
 
-plot_args = [{'c': 'red', 'linestyle': '-'},
-             {'c': 'red', 'linestyle': '--'},
-             {'c': 'blue', 'linestyle': '-'},
-             {'c': 'blue', 'linestyle': '--'},
-             {'c': 'green', 'linestyle': '-'},
-             {'c': 'green', 'linestyle': '--'},
-             {'c': 'black', 'linestyle': '-'},
-             {'c': 'black', 'linestyle': '--'},
-             {'c': 'magenta', 'linestyle': '-'},
-             {'c': 'magenta', 'linestyle': '--'}]
 
-file_name = '../data/hidden_unit_model_results_demo.csv'
-
+def grid_search(param_grid):
+    grid_search_fit = GridSearchCV(estimator=clf,
+                               param_grid=param_grid,
+                               scoring='accuracy',
+                               cv=10,
+                               n_jobs=1)
+    grid_search_fit = grid_search_fit.fit(X_train, y_train)
+    grid_csv = pd.DataFrame(grid_search_fit.cv_results_).to_csv('../data/grid_search_results.csv')
+    print(grid_search.best_params_)
 
 # function for exporting to CSV
 def export_to_csv(model_name, train_score, train_loss, test_score, iterations, filename):
@@ -116,7 +74,6 @@ def export_to_csv(model_name, train_score, train_loss, test_score, iterations, f
                             'Training Set Loss': train_loss,
                             'Test Set Score': test_score, 'Iterations': iterations})
     results.to_csv(filename)
-
 
 # Function for plotting the different models
 def plot_on_models(X, y, X_test, y_test, ax, name):
@@ -133,7 +90,8 @@ def plot_on_models(X, y, X_test, y_test, ax, name):
     # initiating the models
     for label, param, saved_network in zip(labels, params, saved_networks):
         print("training: %s" % label)
-        mlp = MLPClassifier(**param)
+        mlp = MLPClassifier(solver='sgd', learning_rate_init=0.8, momentum=0.1, activation='logistic',
+                            tol=0.00001, n_iter_no_change=10, max_iter=20000, **param)
 
         # some parameter combinations will not converge as can be seen on the
         # plots so they are ignored here
@@ -149,38 +107,42 @@ def plot_on_models(X, y, X_test, y_test, ax, name):
         test_scores.append(mlp.score(X_test, y_test))
         iterations.append(mlp.n_iter_)
 
-        print("Training set score: %f" % mlp.score(X, y))
+        print("Training set accuracy: %f" % mlp.score(X, y))
         print("Training set loss: %f" % mlp.loss_)
-        print("Test set score: %f" % mlp.score(X_test, y_test))
+        print("Test set accuracy: %f" % mlp.score(X_test, y_test))
         print("Iterations: %f" % mlp.n_iter_)
-
 
     for mlp, label, args in zip(mlps, labels, plot_args):
         ax.plot(mlp.loss_curve_, label=label, **args)
 
-    export_to_csv(labels, train_scores, train_losses, test_scores, iterations, file_name)
+    export_to_csv(labels, train_scores, train_losses, test_scores, iterations, model_results)
 
 
 # ***************Set up plot***************
 fig, axes = plt.subplots(figsize=(15, 10))
 plot_on_models(X_train, y_train, X_test, y_test, ax=axes,
-                name='Loss vs No. Epochs For Models With Varying Hidden Units')
+               name='Loss vs No. Epochs For Models With Varying Hidden Units')
 fig.legend(axes.get_lines(), labels, ncol=3, loc="best", shadow=True)
 plt.xlabel("No. of Epochs")
 plt.ylabel("Loss")
 plt.show()
-plt.savefig('../data/Hidden_Unit_models.png_demo')
+plt.savefig(save_fig)
 
 
 
-
-# fit a linear regression model
-lm = linear_model.LinearRegression()
-model = lm.fit(X_train, y_train)
-predictions_L = lm.predict(X_test)
+# # fit a linear regression model
+# lm = linear_model.LinearRegression()
+# model = lm.fit(X_train, y_train)
+# predictions_L = lm.predict(X_test)
 
 ## The line / model
 # plt.scatter(y_test, proba)
 # plt.xlabel('True Values')
 # plt.ylabel('Predictions')
 # plt.show()
+# x_axis = [1, 2, 3 ,4 ,5]
+# y_axis = [100,200,300,400,500]
+# plt.barh(x_axis,y_axis, color ='green', label="label for legend")
+# plt.title('The title')
+
+# plt.legend(facecolor="gra y", shadow=True, title="title for legend")

@@ -1,0 +1,32 @@
+
+
+# Params for models with varying hidden unit sizes
+params = [{'hidden_layer_sizes': (1,)}, {'hidden_layer_sizes': (2,)}, {'hidden_layer_sizes': (3,)},
+          {'hidden_layer_sizes': (4,)}, {'hidden_layer_sizes': (5,)}, {'hidden_layer_sizes': (6,)},
+          {'hidden_layer_sizes': (7,)}, {'hidden_layer_sizes': (8,)}, {'hidden_layer_sizes': (9,)},
+          {'hidden_layer_sizes': (10,)}]
+
+# Files for saving the networks and results
+saved_networks = ['../hidden_unit_models/mynetwork_1.joblib', '../hidden_unit_models/mynetwork_2.joblib',
+                  '../hidden_unit_models/mynetwork_3.joblib', '../hidden_unit_models/mynetwork_4.joblib',
+                  '../hidden_unit_models/mynetwork_5.joblib', '../hidden_unit_models/mynetwork_6.joblib',
+                  '../hidden_unit_models/mynetwork_7.joblib', '../hidden_unit_models/mynetwork_8.joblib',
+                  '../hidden_unit_models/mynetwork_9.joblib', '../hidden_unit_models/mynetwork_10.joblib']
+save_fig = '../demo_results/hidden_unit_model_fig.png'
+model_results = '../demo_results/hidden_unit_model_results.csv'
+
+# Labels for the hidden unit graph plot
+labels = ["1 hidden unit", "2 hidden units", "3 hidden units", "4 hidden units", "5 hidden units",
+          "6 hidden units", "7 hidden units", "8 hidden units", "9 hidden units", "10 hidden units"]
+
+# Arguments for the hidden unit graph plot
+plot_args = [{'c': 'red', 'linestyle': '-'},
+             {'c': 'red', 'linestyle': '--'},
+             {'c': 'blue', 'linestyle': '-'},
+             {'c': 'blue', 'linestyle': '--'},
+             {'c': 'green', 'linestyle': '-'},
+             {'c': 'green', 'linestyle': '--'},
+             {'c': 'black', 'linestyle': '-'},
+             {'c': 'black', 'linestyle': '--'},
+             {'c': 'magenta', 'linestyle': '-'},
+             {'c': 'magenta', 'linestyle': '--'}]
