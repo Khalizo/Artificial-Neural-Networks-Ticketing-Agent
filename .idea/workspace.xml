@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="800ffc15-918a-4748-b28e-9de228965362" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/A4src/configuration.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/A4src/Basic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A4src/A4main.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/A4main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A4src/mynetwork.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Hidden_Unit_models.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hidden_unit_model_results.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/.~lock.grid_search_results.csv#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/.~lock.hidden_unit_model_results.csv#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/.~lock.tickets.csv#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_results/hidden_unit_model_fig.png" beforeDir="false" afterPath="$PROJECT_DIR$/demo_results/hidden_unit_model_fig.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_results/hidden_unit_model_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demo_results/hidden_unit_model_results.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_1.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_1.joblib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_10.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_10.joblib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_2.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_2.joblib" afterDir="false" />
@@ -18,7 +20,19 @@
       <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_7.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_7.joblib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_8.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_8.joblib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_9.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_9.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/tickets.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/tickets.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_1.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_1.joblib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_10.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_10.joblib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_2.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_2.joblib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_3.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_3.joblib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_4.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_4.joblib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_5.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_5.joblib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_6.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_6.joblib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_7.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_7.joblib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_8.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_8.joblib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_9.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models_final/mynetwork_9.joblib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/.~lock.hidden_unit_model_results.csv#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/hidden_unit_model_fig.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/hidden_unit_model_fig.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/hidden_unit_model_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/hidden_unit_model_results.csv" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,10 +46,25 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/A4src/A4main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="130" selection-start-line="130" selection-end-line="130" />
+            <state relative-caret-position="285">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#1787#2211#0" />
+                <element signature="e#2701#4339#0" />
+                <element signature="e#4426#4784#0" />
               </folding>
             </state>
           </provider>
@@ -44,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/A4src/configuration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state>
+              <caret selection-end-line="29" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -53,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
+            <state relative-caret-position="1320">
               <caret line="88" selection-start-line="88" selection-end-line="88" />
             </state>
           </provider>
@@ -77,6 +106,7 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/A4src/config.py" />
         <option value="$PROJECT_DIR$/A4src/configuration.py" />
+        <option value="$PROJECT_DIR$/A4src/Basic.py" />
         <option value="$PROJECT_DIR$/A4src/A4main.py" />
       </list>
     </option>
@@ -93,17 +123,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -115,6 +134,17 @@
               <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/Workspace-PyCharm/A4-Artificial-Neural-Networks-Ticketing Agent" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="A4src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -155,6 +185,28 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration name="Basic" type="PythonConfigurationType" factoryName="Python">
+      <module name="A4-Artificial Neural Networks-Ticketing Agent" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/A4src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/A4src/A4main.py" />
+      <option name="PARAMETERS" value="Bas" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="A4-Artificial Neural Networks-Ticketing Agent" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,28 +223,6 @@
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python">
-      <module name="A4-Artificial Neural Networks-Ticketing Agent" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/A4src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/A4src/A4main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -299,32 +329,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hidden_unit_models/mynetwork.joblib" />
     <entry file="file://$PROJECT_DIR$/data/tickets.csv" />
-    <entry file="file://$PROJECT_DIR$/data/hidden_unit_model_results.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/hidden_unit_model_results_demo.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/hidden_unit_model_results.csv" />
+    <entry file="file://$PROJECT_DIR$/data/hidden_unit_model_results_demo.csv" />
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
+        <state relative-caret-position="1320">
           <caret line="88" selection-start-line="88" selection-end-line="88" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/A4src/configuration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state>
+          <caret selection-end-line="29" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1787#2211#0" />
+            <element signature="e#2701#4339#0" />
+            <element signature="e#4426#4784#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/A4src/A4main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
