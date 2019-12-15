@@ -5,6 +5,7 @@ import sys
 args = sys.argv
 agent = args[1]
 
+print(args)
 
 # function for choosing the correct agent
 def choose_agent(argument):
@@ -20,5 +21,5 @@ def choose_agent(argument):
 
 
 # Choose the agent
-choose_agent(agent)
+# choose_agent(agent)
 
