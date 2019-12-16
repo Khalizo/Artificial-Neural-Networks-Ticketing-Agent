@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="800ffc15-918a-4748-b28e-9de228965362" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A4src/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/Basic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A4src/Intermediate.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/Intermediate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A4src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A4src/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/test.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -22,11 +19,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/A4src/A4main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="10" selection-start-line="10" selection-end-line="20" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                  </folding>
+                <state>
+                  <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -34,8 +28,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/A4src/Intermediate.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="398">
-                  <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
+                <state relative-caret-position="495">
+                  <caret line="120" selection-start-line="120" selection-end-line="120" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
                   </folding>
@@ -45,7 +39,11 @@
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/A4src/config.py">
-              <provider selected="true" editor-type-id="text-editor" />
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="203">
+                  <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+                </state>
+              </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
@@ -60,7 +58,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
+                <state relative-caret-position="-307">
                   <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
                 </state>
               </provider>
@@ -100,8 +98,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/A4src/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="27" selection-start-line="3" selection-end-line="24" selection-end-column="18" />
+                <state relative-caret-position="458">
+                  <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -136,8 +137,8 @@
         <option value="$PROJECT_DIR$/A4src/configuration.py" />
         <option value="$PROJECT_DIR$/A4src/config.py" />
         <option value="$PROJECT_DIR$/A4src/Basic.py" />
-        <option value="$PROJECT_DIR$/A4src/test.py" />
         <option value="$PROJECT_DIR$/A4src/Intermediate.py" />
+        <option value="$PROJECT_DIR$/A4src/test.py" />
       </list>
     </option>
   </component>
@@ -219,7 +220,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Intermediate">
+  <component name="RunManager" selected="Python.test">
     <configuration name="Basic (A4main)" type="PythonConfigurationType" factoryName="Python">
       <module name="A4-Artificial Neural Networks-Ticketing Agent" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -434,42 +435,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/test.py</url>
-          <line>5</line>
+          <line>6</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/test.py</url>
-          <line>6</line>
+          <line>7</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/test.py</url>
-          <line>7</line>
+          <line>8</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/test.py</url>
-          <line>9</line>
+          <line>10</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/test.py</url>
-          <line>10</line>
+          <line>11</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/test.py</url>
-          <line>11</line>
+          <line>12</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/test.py</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/test.py</url>
-          <line>18</line>
+          <line>19</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
@@ -498,16 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A4src/A4main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" selection-start-line="10" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/lib/python3.7/site-packages/sklearn/utils/extmath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2115">
@@ -530,9 +521,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/A4src/config.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A4src/test.py">
+    <entry file="file://$PROJECT_DIR$/A4src/A4main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
@@ -541,17 +536,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="-307">
           <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/A4src/Intermediate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
+        <state relative-caret-position="495">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A4src/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>

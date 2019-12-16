@@ -68,7 +68,7 @@ def pick_team(team):
     return response_team
 
 
-def prediction(clf,X_2):
+def prediction(clf, X_2):
     no_allocation = np.array([[0, 0, 0, 0, 0]])
     prediction_int = clf.predict(X_2)
     prediction_probab = clf.predict_proba(X_2)
@@ -110,6 +110,7 @@ def ask_questions():
             predicted_columns = fill_missing_columns(answers)
             converted_p = convert_answers(predicted_columns)
             prediction(clf, converted_p)
+            input("Are you happy with this allocation?")
             break
 
         elif len(answers) == 9:
@@ -117,7 +118,7 @@ def ask_questions():
             prediction(clf, converted)
 
 
-ask_questions()
+
 
 
 
