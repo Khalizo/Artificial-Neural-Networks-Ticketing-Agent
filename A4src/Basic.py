@@ -19,13 +19,18 @@ tickets = pd.read_csv('../data/tickets.csv')
 categories = tickets["Response Team"]
 inputs = tickets.loc[:, "Request":"Students"]
 
-# encode the X values using numpy boolean indexing
-X = array(inputs)
-no_bool = X == 'No'
-yes_bool = X == 'Yes'
-X[no_bool] = 0
-X[yes_bool] = 1
 
+# encode the X values using numpy boolean indexing
+def convert_inputs(inputs):
+    X = array(inputs)
+    no_bool = X == 'No'
+    yes_bool = X == 'Yes'
+    X[no_bool] = 0
+    X[yes_bool] = 1
+    return X
+
+
+X = convert_inputs(inputs)
 # encoding the y values with a one - hot encoding method
 y = array(pd.get_dummies(categories))
 

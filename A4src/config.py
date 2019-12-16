@@ -1,5 +1,4 @@
 
-
 # Params for models with varying hidden unit sizes
 params = [{'hidden_layer_sizes': (1,)}, {'hidden_layer_sizes': (2,)}, {'hidden_layer_sizes': (3,)},
           {'hidden_layer_sizes': (4,)}, {'hidden_layer_sizes': (5,)}, {'hidden_layer_sizes': (6,)},
@@ -41,3 +40,5 @@ question_args = [["Question 1: Request? (Yes/No/Q) \n", False],
                  ["Question 7: ID Cards? (Yes/No/P/Q) \n", True],
                  ["Question 8: Staff? (Yes/No/P/Q) \n", True],
                  ["Question 9: Students? (Yes/No/P/Q) \n", True]]
+
+# List of all the columns of the inputs
