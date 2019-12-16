@@ -3,7 +3,7 @@ from A4src.Intermediate import *
 
 
 def fill_missing_columns(answers):
-    input_cols = array(inputs.columns)
+    input_cols = array(input_values.columns)
     answered_dict = {}  # dictionary of answers provided so far
     no_answers = answers.__len__()
     counter = 0  # counter for each iteration of the for loop
@@ -15,7 +15,7 @@ def fill_missing_columns(answers):
             break
 
     # Filters the inputs CV columns based on the answers provided so far
-    filtered = inputs[np.logical_and.reduce([(inputs[k] == v) for k, v in answered_dict.items()])]
+    filtered = input_values[np.logical_and.reduce([(input_values[k] == v) for k, v in answered_dict.items()])]
     # Finds the most frequently occurring values of the missing columns based on the answers provided so far
     mode_columns = array(filtered.mode().iloc[:, no_answers:9])
     # Adds the most frequently occurring answers back into the answers array for prediction
@@ -34,24 +34,30 @@ print(fill_missing_columns(hello))
 
 happy_q = input("Are you happy with this allocation?\n").lower()
 if happy_q == 'no':
-    new_ticket = []
+    new_ticket = array([[1, 1, 0, 1, 1, 1, 0, 0, 1]])
     team_select = input(
         "Apologies for that, which team from below would you like to speak to? Please select a number:\n"
         "0 - Credentials\n1 - Datawarehouse\n2 - Emergencies\n3 - Equipment\n4 - Networking\n")
     selected_team = pick_team(int(team_select))
-    for value in hello:
-        new_ticket.append(value.capitalize())
-    new_ticket.append(selected_team)
+    selected_team_encoded = pick_team_encoded(int(team_select))
+    # for value in hello:)
+    #     new_ticket.append(value.capitalize())
+    # new_ticket.append(selected_team)
     print("Thank for your patience, your request will be sent to the " + selected_team)
 
+updated_X_train = np.concatenate((X_train, new_ticket), axis=0)
+updated_y_train = np.vstack([y_train, selected_team_encoded])
 
-all_cols = array(tickets.columns)
-new_ticket = np.array([new_ticket])
-new_ticket = pd.DataFrame(new_ticket, columns=all_cols)
-print(new_ticket)
+# all_cols = array(tickets.columns)
+# new_ticket = np.array([new_ticket])
+# new_ticket = pd.DataFrame(new_ticket, columns=all_cols)
+print(selected_team_encoded)
 print("\n")
-updated_tickets = tickets.append(new_ticket)
+# updated_tickets = tickets.append(new_ticket)
 
-print(tickets)
 print("\n")
-print(updated_tickets)
+print(y_train)
+print(y_train.shape)
+print(updated_y_train)
+print(updated_y_train.shape)
+

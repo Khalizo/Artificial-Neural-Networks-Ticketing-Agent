@@ -21,5 +21,4 @@ def choose_agent(argument):
 
 
 # Choose the agent
-# choose_agent(agent)
-
+choose_agent(agent)

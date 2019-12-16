@@ -16,23 +16,31 @@ from A4src.config import *
 # ***************Encoding The Data***************
 # load data set
 tickets = pd.read_csv('../data/tickets.csv')
-categories = tickets["Response Team"]
-inputs = tickets.loc[:, "Request":"Students"]
+input_values = tickets.loc[:, "Request":"Students"]
 
+def encode(dataset):
+    categories = dataset["Response Team"]  # separate the output values
+    inputs = dataset.loc[:, "Request":"Students"]  # separate the input values
+    X_y = {}  # dictionary for storing the inputs and outputs separately
 
-# encode the X values using numpy boolean indexing
-def convert_inputs(inputs):
+    # encode the inputs values using numpy boolean indexing
     X = array(inputs)
     no_bool = X == 'No'
     yes_bool = X == 'Yes'
     X[no_bool] = 0
     X[yes_bool] = 1
-    return X
+    X_y[0] = X
+
+    # encode the categories
+    y = array(pd.get_dummies(categories))
+    X_y[1] = y
+    return X_y
 
 
-X = convert_inputs(inputs)
+X = encode(tickets).get(0)
+y = encode(tickets).get(1)
 # encoding the y values with a one - hot encoding method
-y = array(pd.get_dummies(categories))
+
 
 
 # ***************Split The Data Between Training and Testing***************

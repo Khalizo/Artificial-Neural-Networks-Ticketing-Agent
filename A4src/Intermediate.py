@@ -68,6 +68,19 @@ def pick_team(team):
     return response_team
 
 
+def pick_team_encoded(team):
+    teams = {
+        0: [1, 0, 0, 0, 0],
+        1: [0, 1, 0, 0, 0],
+        2: [0, 0, 1, 0, 0],
+        3: [0, 0, 0, 1, 0],
+        4: [0, 0, 0, 0, 1],
+    }
+    #get teams from dictionary
+    response_team = teams.get(team, lambda: "Invalid month")
+    return response_team
+
+
 def prediction(clf, X_2):
     no_allocation = np.array([[0, 0, 0, 0, 0]])
     prediction_int = clf.predict(X_2)
@@ -81,7 +94,7 @@ def prediction(clf, X_2):
 
 
 def fill_missing_columns(answers):
-    input_cols = array(inputs.columns)
+    input_cols = array(input_values.columns)
     answered_dict = {}  # dictionary of answers provided so far
     no_answers = answers.__len__()
     counter = 0 # counter for each iteration of the for loop
@@ -93,7 +106,7 @@ def fill_missing_columns(answers):
             break
 
     # Filters the inputs CV columns based on the answers provided so far
-    filtered = inputs[np.logical_and.reduce([(inputs[k] == v) for k, v in answered_dict.items()])]
+    filtered = input_values[np.logical_and.reduce([(input_values[k] == v) for k, v in answered_dict.items()])]
     # Finds the most frequently occurring values of the missing columns based on the answers provided so far
     mode_columns = array(filtered.mode().iloc[:, no_answers:9])
     # Adds the most frequently occurring answers back into the answers array for prediction
@@ -110,12 +123,15 @@ def ask_questions():
             predicted_columns = fill_missing_columns(answers)
             converted_p = convert_answers(predicted_columns)
             prediction(clf, converted_p)
+            print(converted_p)
             input("Are you happy with this allocation?")
             break
 
         elif len(answers) == 9:
             converted = convert_answers(answers)
             prediction(clf, converted)
+
+
 
 
 
