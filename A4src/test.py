@@ -44,4 +44,14 @@ if happy_q == 'no':
     new_ticket.append(selected_team)
     print("Thank for your patience, your request will be sent to the " + selected_team)
 
+
+all_cols = array(tickets.columns)
+new_ticket = np.array([new_ticket])
+new_ticket = pd.DataFrame(new_ticket, columns=all_cols)
 print(new_ticket)
+print("\n")
+updated_tickets = tickets.append(new_ticket)
+
+print(tickets)
+print("\n")
+print(updated_tickets)
