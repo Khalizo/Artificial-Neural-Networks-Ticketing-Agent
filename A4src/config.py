@@ -30,3 +30,14 @@ plot_args = [{'c': 'red', 'linestyle': '-'},
              {'c': 'black', 'linestyle': '--'},
              {'c': 'magenta', 'linestyle': '-'},
              {'c': 'magenta', 'linestyle': '--'}]
+
+# Arguments for the questions asked to get the user's input
+question_args = [["Question 1: Request? (Yes/No/Q) \n", False],
+                 ["Question 2: Incident? (Yes/No/Q) \n", False],
+                 ["Question 3: WebServices? (Yes/No/Q) \n", False],
+                 ["Question 4: Login? (Yes/No/P/Q) \n", True],
+                 ["Question 5: Wireless (Yes/No/P/Q) \n", True],
+                 ["Question 6: Printing? (Yes/No/P/Q) \n", True],
+                 ["Question 7: ID Cards? (Yes/No/P/Q) \n", True],
+                 ["Question 8: Staff? (Yes/No/P/Q) \n", True],
+                 ["Question 9: Students? (Yes/No/P/Q) \n", True]]

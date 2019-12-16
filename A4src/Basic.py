@@ -11,7 +11,7 @@ from matplotlib import pyplot as plt
 from sklearn.neural_network import MLPClassifier
 from sklearn.exceptions import ConvergenceWarning
 from sklearn.model_selection import GridSearchCV
-from A4src.configuration import *
+from A4src.config import *
 
 # ***************Encoding The Data***************
 # load data set
@@ -19,7 +19,7 @@ tickets = pd.read_csv('../data/tickets.csv')
 categories = tickets["Response Team"]
 inputs = tickets.loc[:, "Request":"Students"]
 
-# encode the X values
+# encode the X values using numpy boolean indexing
 X = array(inputs)
 no_bool = X == 'No'
 yes_bool = X == 'Yes'
@@ -28,6 +28,7 @@ X[yes_bool] = 1
 
 # encoding the y values with a one - hot encoding method
 y = array(pd.get_dummies(categories))
+
 
 # ***************Split The Data Between Training and Testing***************
 # creating training and test data sets
@@ -46,6 +47,7 @@ clf = MLPClassifier(solver='sgd',
 param_grid = [{'solver': ['sgd'], 'momentum': [0.001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
                'learning_rate_init': [0.001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]}]
 
+
 def grid_search(param_grid):
     grid_search_fit = GridSearchCV(estimator=clf,
                                param_grid=param_grid,
@@ -56,12 +58,14 @@ def grid_search(param_grid):
     grid_csv = pd.DataFrame(grid_search_fit.cv_results_).to_csv('../data/grid_search_results.csv')
     print(grid_search.best_params_)
 
+
 # function for exporting to CSV
 def export_to_csv(model_name, train_score, train_loss, test_score, iterations, filename):
     results = pd.DataFrame({'Model Name': model_name, 'Training Set Score': train_score,
                             'Training Set Loss': train_loss,
                             'Test Set Score': test_score, 'Iterations': iterations})
     results.to_csv(filename)
+
 
 # Function for plotting the different models
 def plot_on_models(X, y, X_test, y_test, ax, name):
@@ -88,6 +92,7 @@ def plot_on_models(X, y, X_test, y_test, ax, name):
                                     module="sklearn")
             mlp.fit(X, y)
             joblib.dump(mlp, saved_network)
+
         # add models and data points to their respective arrays
         mlps.append(mlp)
         train_scores.append(mlp.score(X, y))
