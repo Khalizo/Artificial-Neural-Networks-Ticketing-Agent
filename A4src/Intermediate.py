@@ -32,7 +32,7 @@ def get_user_input(prompt, p=True):
         if answer.lower() == 'q':
             sys.exit()
         elif (p == True) & (answer.lower() == 'p'):
-            print('prediction')
+
             break
         elif not (re.search(r'\byes\b', answer, re.I) or re.search(r'\bno\b', answer, re.I)):
             print("Sorry, that is not a valid response")
@@ -114,27 +114,88 @@ def fill_missing_columns(answers):
         for value in col:
             answers.append(value.lower())
 
-    return answers
+    return [answers, no_answers]
+
+
+def new_ticket_request():
+    while True:
+        try:
+            another_ticket = input("Would you like another ticket request? (Yes/No)\n")
+        except ValueError:
+            print("Sorry, that is not a valid response")
+            continue
+
+        if another_ticket.lower() == 'no':
+            sys.exit()
+        elif another_ticket.lower() == 'yes':
+            del answers[:]
+            ask_questions()
+            break
+        elif not (re.search(r'\byes\b', another_ticket, re.I) or re.search(r'\bno\b', another_ticket, re.I)):
+            print("Sorry, that is not a valid response\n")
+            continue
+
+
+def check_if_happy(new_ticket):
+
+    while True:
+        try:
+            # check if user is happy
+            happy_q = input("Are you happy with this allocation?(Yes/No)\n").lower()
+        except ValueError:
+            print("Sorry, that is not a valid response")
+            continue
+        if happy_q == 'no':
+            team_select = input(
+                "Apologies for that, which team from below would you like to speak to? Please select a number:\n"
+                "0 - Credentials\n1 - Datawarehouse\n2 - Emergencies\n3 - Equipment\n4 - Networking\n")
+            selected_team = pick_team(int(team_select))
+            selected_team_encoded = pick_team_encoded(int(team_select))
+            print("Thank you for your patience, your request will be sent to the " + selected_team + " team.\n"
+                 "To help improve, our system please answer the remaining question(s)")
+            return selected_team_encoded
+            break
+
+        elif happy_q == 'yes':
+            print("Have a nice day!\n")
+            break
+
+        elif not (re.search(r'\byes\b', happy_q, re.I) or re.search(r'\bno\b', happy_q, re.I)):
+            print("Sorry, that is not a valid response\n")
+            continue
+
+
+def retrain(new_ticket, selected_team_encoded):
+    # Adding new ticket to the training tables
+    updated_X_train = np.concatenate((X_train, new_ticket), axis=0)
+    updated_y_train = np.vstack([y_train, selected_team_encoded])
+    # Retrain the model
+    clf.fit(updated_X_train, updated_y_train)
+    print("Our system, has learnt from this request.\n")
 
 
 def ask_questions():
-    for question in question_args:
-        if get_user_input(*question) == 'p':
-            predicted_columns = fill_missing_columns(answers)
+    i = 0
+    while i < len(question_args):
+        if get_user_input(*question_args[i]) == 'p':
+            no_answered_questions = len(answers)
+            predicted_columns = fill_missing_columns(answers)[0]
             converted_p = convert_answers(predicted_columns)
             prediction(clf, converted_p)
-            print(converted_p)
-            input("Are you happy with this allocation?")
+            check_if_happy(converted_p)
+            for feedback in feedback_args[no_answered_questions:]:
+                get_user_input(*feedback)
             break
 
         elif len(answers) == 9:
             converted = convert_answers(answers)
             prediction(clf, converted)
+        i += 1
+
+    new_ticket_request()
 
 
-
-
-
+ask_questions()
 
 
 

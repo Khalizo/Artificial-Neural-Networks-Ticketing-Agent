@@ -42,3 +42,14 @@ question_args = [["Question 1: Request? (Yes/No/Q) \n", False],
                  ["Question 9: Students? (Yes/No/P/Q) \n", True]]
 
 # List of all the columns of the inputs
+feedback_args = [["Question 1: Request? (Yes/No/Q) \n", False],
+                 ["Question 2: Incident? (Yes/No/Q) \n", False],
+                 ["Question 3: WebServices? (Yes/No/Q) \n", False],
+                 ["Question 4 (Feedback): Login? (Yes/No/Q) \n", False],
+                 ["Question 5 (Feedback): Wireless (Yes/No/Q) \n", False],
+                 ["Question 6 (Feedback): Printing? (Yes/No/Q) \n", False],
+                 ["Question 7 (Feedback): ID Cards? (Yes/No/Q) \n", False],
+                 ["Question 8 (Feedback): Staff? (Yes/No/P/Q) \n", False],
+                 ["Question 9 (Feedback): Students? (Yes/No/Q) \n", False]]
+
+
