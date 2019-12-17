@@ -81,7 +81,7 @@ def give_options(team):
 
 
 give_options(2)
-"Based on your answers, your request will be sent to the " + pick_team(team) + " team.")
+
 
 def team_allocate(predicted_team_number):
     while True:

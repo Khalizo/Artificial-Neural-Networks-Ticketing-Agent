@@ -11,7 +11,7 @@ from matplotlib import pyplot as plt
 from sklearn.neural_network import MLPClassifier
 from sklearn.exceptions import ConvergenceWarning
 from sklearn.model_selection import GridSearchCV
-from A4src.config import *
+from A4src.Config import *
 
 # ***************Encoding The Data***************
 # load data set
@@ -63,13 +63,12 @@ param_grid = [{'solver': ['sgd'], 'momentum': [0.001, 0.1, 0.2, 0.3, 0.4, 0.5, 0
 
 def grid_search(param_grid):
     grid_search_fit = GridSearchCV(estimator=clf,
-                               param_grid=param_grid,
-                               scoring='accuracy',
-                               cv=10,
-                               n_jobs=1)
+                                   param_grid=param_grid,
+                                   scoring='accuracy',
+                                   cv=10,
+                                   n_jobs=1)
     grid_search_fit = grid_search_fit.fit(X_train, y_train)
     grid_csv = pd.DataFrame(grid_search_fit.cv_results_).to_csv('../data/grid_search_results.csv')
-    print(grid_search.best_params_)
 
 
 # function for exporting to CSV

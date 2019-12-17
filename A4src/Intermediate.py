@@ -5,11 +5,7 @@ from numpy import array
 from sklearn.neural_network import MLPClassifier
 # Ticket routing agent system
 
-print("Hi there! Please answer the following 9 questions so that your ticket request can be routed to the correct team.\n"
-      "If you'd like us to make a prediction, please answer at least 3 questions\n"
-      "Please answer the questions with either Yes, No, P or Q.\n"
-      "P = early prediction. Please note, that we will need at least 3 answers before this is available\n"
-      "Q = quit\n\n")
+
 
 # Create an empty array for the answers
 answers = []
@@ -24,14 +20,14 @@ def get_user_input(prompt,  p=True):
 
     while True:
         try:
-            answer = input(prompt)
+            answer = input(prompt).lower().strip()
         except ValueError:
             print("Sorry, that is not a valid response")
             continue
 
         if answer.lower() == 'q':
             sys.exit()
-        elif (p == True) & (answer.lower() == 'p'):
+        elif (p == True) & (answer == 'p'):
             break
         elif not (re.search(r'\byes\b', answer, re.I) or re.search(r'\bno\b', answer, re.I)):
             print("Sorry, that is not a valid response")
@@ -141,7 +137,7 @@ def new_ticket_request():
             sys.exit()
         elif another_ticket.lower() == 'yes':
             del answers[:]
-            ask_questions()
+            intermediate()
             break
         elif not (re.search(r'\byes\b', another_ticket, re.I) or re.search(r'\bno\b', another_ticket, re.I)):
             print("Sorry, that is not a valid response\n")
@@ -159,6 +155,9 @@ def team_allocate(predicted_team_number):
             continue
         if int(team_select) == predicted_team_number:
             print("Sorry, we already allocated this team, please pick one available from the list:")
+            continue
+        elif int(team_select) not in [0,1,2,3,4]:
+            print("Sorry, that is not a valid response")
             continue
         else:
             break
@@ -197,7 +196,8 @@ def retrain(new_ticket, selected_team_encoded):
     updated_y_train = np.vstack([y_train, selected_team_encoded])
     # Retrain the model
     clf.fit(updated_X_train, updated_y_train)
-    print("Thank you very much for your time! Our system, has learnt from your input. (Model is has been retrained...)\n")
+    print("Thank you very much for your time! Our system, has learnt from your input.  \n" +
+          " (Model has been retrained...)\n")
 
 
 def get_feedback(answer_count, answers_so_far):
@@ -209,8 +209,9 @@ def get_feedback(answer_count, answers_so_far):
     return new_ticket
 
 
-def ask_questions():
+def intermediate():
     i = 0
+    print(opening_message)
     while i < len(question_args):
         if get_user_input(*question_args[i]) == 'p':
             answer_count = len(answers)
@@ -236,7 +237,7 @@ def ask_questions():
     new_ticket_request()
 
 
-ask_questions()
+
 
 
 

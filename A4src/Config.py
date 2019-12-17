@@ -1,4 +1,15 @@
 
+
+# opening message
+
+opening_message = "Hi there! Please answer the following 9 questions so that your ticket request can be routed" \
+                  " to the correct team.\n"+ "If you'd like us to make a prediction, please answer at least 3 " \
+                 "questions\n" + "Please answer the questions with " \
+                  "either Yes, No, P or Q.\n" + "P = early prediction. Please note, that we will need at" \
+                  " least 3 answers before " \
+                  "this is available\n" + "Q = quit\n\n"
+
+
 # Params for models with varying hidden unit sizes
 params = [{'hidden_layer_sizes': (1,)}, {'hidden_layer_sizes': (2,)}, {'hidden_layer_sizes': (3,)},
           {'hidden_layer_sizes': (4,)}, {'hidden_layer_sizes': (5,)}, {'hidden_layer_sizes': (6,)},
