@@ -20,7 +20,7 @@ early_prediction_prompt = "Would you like us to assign you to a team now? (Yes/N
 clf = joblib.load('../hidden_unit_models_final/mynetwork_5.joblib')
 
 
-def get_user_input(prompt, p=True):
+def get_user_input(prompt,  p=True):
 
     while True:
         try:
@@ -32,7 +32,6 @@ def get_user_input(prompt, p=True):
         if answer.lower() == 'q':
             sys.exit()
         elif (p == True) & (answer.lower() == 'p'):
-
             break
         elif not (re.search(r'\byes\b', answer, re.I) or re.search(r'\bno\b', answer, re.I)):
             print("Sorry, that is not a valid response")
@@ -81,6 +80,20 @@ def pick_team_encoded(team):
     return response_team
 
 
+def give_options(team):
+        switcher = {
+            0: '1 - Datawarehouse\n2 - Emergencies\n3 - Equipment\n4 - Networking\n',
+            1: '0 - Credentials\n2 - Emergencies\n3 - Equipment\n4 - Networking\n',
+            2: '0 - Credentials\n1 - Datawarehouse\n3 - Equipment\n4 - Networking\n',
+            3: '0 - Credentials\n1 - Datawarehouse\n2 - Emergencies\n4 - Networking\n',
+            4: '0 - Credentials\n1 - Datawarehouse\n2 - Emergencies\n3 - Equipment\n',
+        }
+        # Get the function from switcher dictionary
+        func = switcher.get(team, lambda: "Invalid option")
+        # Execute the function
+        return func
+
+
 def prediction(clf, X_2):
     no_allocation = np.array([[0, 0, 0, 0, 0]])
     prediction_int = clf.predict(X_2)
@@ -90,7 +103,7 @@ def prediction(clf, X_2):
     else:
         team = np.argmax(prediction_int)
 
-    return print("Based on your answers, your request will be sent to the " + pick_team(team) + " team.")
+    return [pick_team(team), team]
 
 
 def fill_missing_columns(answers):
@@ -114,7 +127,7 @@ def fill_missing_columns(answers):
         for value in col:
             answers.append(value.lower())
 
-    return [answers, no_answers]
+    return answers
 
 
 def new_ticket_request():
@@ -124,7 +137,6 @@ def new_ticket_request():
         except ValueError:
             print("Sorry, that is not a valid response")
             continue
-
         if another_ticket.lower() == 'no':
             sys.exit()
         elif another_ticket.lower() == 'yes':
@@ -136,7 +148,28 @@ def new_ticket_request():
             continue
 
 
-def check_if_happy(new_ticket):
+def team_allocate(predicted_team_number):
+    while True:
+        try:
+            team_select = input(
+                "Apologies for that, which team from below would you like to speak to? Please select a number:\n"
+                + give_options(predicted_team_number))
+        except ValueError:
+            print("Sorry, that is not a valid response")
+            continue
+        if int(team_select) == predicted_team_number:
+            print("Sorry, we already allocated this team, please pick one available from the list:")
+            continue
+        else:
+            break
+    selected_team = pick_team(int(team_select))
+    selected_team_encoded = pick_team_encoded(int(team_select))
+    print("Thank you for your patience, your request will be sent to the " + selected_team + " team.\n"
+        "To help improve our system please answer the remaining question(s)")
+    return selected_team_encoded
+
+
+def check_if_happy(new_ticket, predicted_team_number):
 
     while True:
         try:
@@ -146,18 +179,11 @@ def check_if_happy(new_ticket):
             print("Sorry, that is not a valid response")
             continue
         if happy_q == 'no':
-            team_select = input(
-                "Apologies for that, which team from below would you like to speak to? Please select a number:\n"
-                "0 - Credentials\n1 - Datawarehouse\n2 - Emergencies\n3 - Equipment\n4 - Networking\n")
-            selected_team = pick_team(int(team_select))
-            selected_team_encoded = pick_team_encoded(int(team_select))
-            print("Thank you for your patience, your request will be sent to the " + selected_team + " team.\n"
-                 "To help improve, our system please answer the remaining question(s)")
-            return selected_team_encoded
+            return team_allocate(predicted_team_number)
             break
-
         elif happy_q == 'yes':
             print("Have a nice day!\n")
+            return True
             break
 
         elif not (re.search(r'\byes\b', happy_q, re.I) or re.search(r'\bno\b', happy_q, re.I)):
@@ -171,20 +197,35 @@ def retrain(new_ticket, selected_team_encoded):
     updated_y_train = np.vstack([y_train, selected_team_encoded])
     # Retrain the model
     clf.fit(updated_X_train, updated_y_train)
-    print("Our system, has learnt from this request.\n")
+    print("Thank you very much for your time! Our system, has learnt from your input. (Model is has been retrained...)\n")
+
+
+def get_feedback(answer_count, answers_so_far):
+    del answers[:]  # empty answers
+    for feedback in feedback_args[answer_count:]:  # get feedback based on the remaining questions
+        get_user_input(*feedback)
+    new_ticket = np.concatenate((answers, answers_so_far[0:answer_count]), axis=0)
+    new_ticket = convert_answers(new_ticket)
+    return new_ticket
 
 
 def ask_questions():
     i = 0
     while i < len(question_args):
         if get_user_input(*question_args[i]) == 'p':
-            no_answered_questions = len(answers)
-            predicted_columns = fill_missing_columns(answers)[0]
+            answer_count = len(answers)
+            answers_so_far = answers
+            predicted_columns = fill_missing_columns(answers)
             converted_p = convert_answers(predicted_columns)
-            prediction(clf, converted_p)
-            check_if_happy(converted_p)
-            for feedback in feedback_args[no_answered_questions:]:
-                get_user_input(*feedback)
+            predicted_team = prediction(clf, converted_p)[0]
+            predicted_team_number = prediction(clf, converted_p)[1]
+            print("Based on your answers, your request will be sent to the " + predicted_team + " team.")
+            happy = check_if_happy(converted_p, predicted_team_number)
+            if happy == True:
+                break
+            else:
+                feedback_answers = get_feedback(answer_count, answers_so_far)
+                retrain(feedback_answers, happy)
             break
 
         elif len(answers) == 9:
@@ -196,6 +237,9 @@ def ask_questions():
 
 
 ask_questions()
+
+
+
 
 
 

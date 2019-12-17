@@ -16,7 +16,7 @@ def choose_agent(argument):
         'Adv': "Advanced",
     }
 # Get the function from switcher dictionary
-    func = switcher.get(argument, lambda: "Invalid month")
+    func = switcher.get(argument, lambda: "Invalid option")
     # Execute the function
     print(func())
 

@@ -5,20 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A4src/A4main.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/A4main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A4src/Intermediate.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/Intermediate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A4src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A4src/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_results/hidden_unit_model_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demo_results/hidden_unit_model_results.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_1.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_1.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_10.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_10.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_2.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_2.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_3.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_3.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_4.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_4.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_5.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_5.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_6.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_6.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_7.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_7.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_8.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_8.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_9.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_9.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +21,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/A4src/A4main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+                <state relative-caret-position="255">
+                  <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -46,8 +33,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/A4src/Intermediate.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="185" column="63" selection-start-line="185" selection-start-column="63" selection-end-line="185" selection-end-column="63" />
+                <state relative-caret-position="245">
+                  <caret line="181" column="19" selection-start-line="181" selection-start-column="19" selection-end-line="181" selection-end-column="19" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
                   </folding>
@@ -56,22 +43,22 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/A4src/config.py">
+            <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="540">
-                  <caret line="51" column="67" lean-forward="true" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
+                <state relative-caret-position="900">
+                  <caret line="73" selection-start-line="73" selection-end-line="73" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
+            <entry file="file://$PROJECT_DIR$/A4src/config.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="484">
-                  <caret line="73" selection-start-line="73" selection-end-line="73" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="765">
+                  <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
                 </state>
               </provider>
             </entry>
@@ -119,8 +106,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/A4src/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="350">
-                  <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+                <state relative-caret-position="515">
+                  <caret line="85" selection-start-line="85" selection-end-line="103" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
@@ -153,9 +140,9 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/A4src/configuration.py" />
         <option value="$PROJECT_DIR$/A4src/Basic.py" />
+        <option value="$PROJECT_DIR$/A4src/config.py" />
         <option value="$PROJECT_DIR$/A4src/A4main.py" />
         <option value="$PROJECT_DIR$/A4src/test.py" />
-        <option value="$PROJECT_DIR$/A4src/config.py" />
         <option value="$PROJECT_DIR$/A4src/Intermediate.py" />
       </list>
     </option>
@@ -172,6 +159,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -184,16 +182,28 @@
               <item name="~/Workspace-PyCharm/A4-Artificial-Neural-Networks-Ticketing Agent" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="A4src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="462c0819:PsiDirectoryNode" />
+              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Workspace-PyCharm/A4-Artificial-Neural-Networks-Ticketing Agent" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="env" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Workspace-PyCharm/A4-Artificial-Neural-Networks-Ticketing Agent" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="env" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Workspace-PyCharm/A4-Artificial-Neural-Networks-Ticketing Agent" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="env" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lib" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="A4-Artificial-Neural-Networks-Ticketing Agent" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Workspace-PyCharm/A4-Artificial-Neural-Networks-Ticketing Agent" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="env" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lib64" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -381,14 +391,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06694781" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0985767" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32979852" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2545069" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38176033" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997879" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -489,84 +498,115 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>114</line>
-          <option name="timeStamp" value="29" />
+          <line>226</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>113</line>
-          <option name="timeStamp" value="30" />
+          <line>14</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>112</line>
-          <option name="timeStamp" value="31" />
+          <line>203</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>116</line>
-          <option name="timeStamp" value="32" />
+          <line>206</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>108</line>
-          <option name="timeStamp" value="33" />
+          <line>207</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>110</line>
-          <option name="timeStamp" value="34" />
+          <line>208</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>101</line>
-          <option name="timeStamp" value="35" />
+          <line>204</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="36" />
+          <line>216</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="37" />
+          <line>215</line>
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>181</line>
-          <option name="timeStamp" value="38" />
+          <line>159</line>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>183</line>
-          <option name="timeStamp" value="39" />
+          <line>150</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>182</line>
-          <option name="timeStamp" value="40" />
+          <line>153</line>
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>178</line>
-          <option name="timeStamp" value="42" />
+          <line>193</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>179</line>
-          <option name="timeStamp" value="43" />
+          <line>196</line>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>98</line>
-          <option name="timeStamp" value="44" />
+          <line>195</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
+          <line>222</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
+          <line>227</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="answers" language="Python" />
+        <watch expression="__exception__[1].args" />
+        <watch expression="new_ticket" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/A4_Artificial_Neural_Networks_Ticketing_Agent$main.coverage" NAME="main Coverage Results" MODIFIED="1576001385079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A4src" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>new_ticket</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>answers</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/A4-Artificial-Neural-Networks-Ticketing-Agent.ipynb">
@@ -585,6 +625,40 @@
           <folding>
             <element signature="e#25#79#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/lib/python3.7/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A4src/A4main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A4src/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -616,37 +690,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/A4src/A4main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/A4src/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="51" column="67" lean-forward="true" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/A4src/Intermediate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="185" column="63" selection-start-line="185" selection-start-column="63" selection-end-line="185" selection-end-column="63" />
+        <state relative-caret-position="245">
+          <caret line="181" column="19" selection-start-line="181" selection-start-column="19" selection-end-line="181" selection-end-column="19" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

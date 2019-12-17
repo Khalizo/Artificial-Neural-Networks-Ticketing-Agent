@@ -64,3 +64,41 @@ def check_if_happy(new_ticket):
             continue
 
 
+"0 - Credentials\n1 - Datawarehouse\n2 - Emergencies\n3 - Equipment\n4 - Networking\n"
+
+def give_options(team):
+        switcher = {
+             0: '1 - Datawarehouse\n2 - Emergencies\n3 - Equipment\n4 - Networking\n',
+             1: '0 - Credentials\n2 - Emergencies\n3 - Equipment\n4 - Networking\n',
+             2: '0 - Credentials\n1 - Datawarehouse\n3 - Equipment\n4 - Networking\n',
+             3: '0 - Credentials\n1 - Datawarehouse\n2 - Emergencies\n4 - Networking\n',
+             4: '0 - Credentials\n1 - Datawarehouse\n2 - Emergencies\n3 - Equipment\n',
+        }
+        # Get the function from switcher dictionary
+        func = switcher.get(team, lambda: "Invalid option")
+        # Execute the function
+        return func
+
+
+give_options(2)
+"Based on your answers, your request will be sent to the " + pick_team(team) + " team.")
+
+def team_allocate(predicted_team_number):
+    while True:
+        try:
+            team_select = input(
+                "Apologies for that, which team from below would you like to speak to? Please select a number:\n"
+                + give_options(predicted_team_number))
+        except ValueError:
+            print("Sorry, that is not a valid response")
+            continue
+        if team_select == predicted_team_number:
+            print("Sorry, we already allocated this team, please pick one available from the list:")
+            continue
+        else:
+            break
+    selected_team = pick_team(int(team_select))
+    selected_team_encoded = pick_team_encoded(int(team_select))
+    print("Thank you for your patience, your request will be sent to the " + selected_team + " team.\n"
+                                                                                             "To help improve our system please answer the remaining question(s)")
+    return selected_team_encoded
