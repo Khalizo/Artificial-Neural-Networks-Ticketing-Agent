@@ -50,6 +50,7 @@ def convert_answers(answers):
     return X_2
 
 
+# picks a reponse tea
 def pick_team(team):
     teams = {
         0: 'Credentials',
@@ -163,8 +164,7 @@ def team_allocate(predicted_team_number):
             break
     selected_team = pick_team(int(team_select))
     selected_team_encoded = pick_team_encoded(int(team_select))
-    print("Thank you for your patience, your request will be sent to the " + selected_team + " team.\n"
-        "To help improve our system please answer the remaining question(s)")
+    print("Thank you for your patience, your request will be sent to the " + selected_team + " team.\n")
     return selected_team_encoded
 
 
@@ -196,12 +196,13 @@ def retrain(new_ticket, selected_team_encoded):
     updated_y_train = np.vstack([y_train, selected_team_encoded])
     # Retrain the model
     clf.fit(updated_X_train, updated_y_train)
-    print("Thank you very much for your time! Our system, has learnt from your input.  \n" +
+    print("Our system, has learnt from your input.  \n" +
           " (Model has been retrained...)\n")
 
 
 def get_feedback(answer_count, answers_so_far):
     del answers[:]  # empty answers
+    print("To help improve our system please answer the remaining question(s)\n")
     for feedback in feedback_args[answer_count:]:  # get feedback based on the remaining questions
         get_user_input(*feedback)
     new_ticket = np.concatenate((answers, answers_so_far[0:answer_count]), axis=0)
@@ -212,8 +213,8 @@ def get_feedback(answer_count, answers_so_far):
 def intermediate():
     i = 0
     print(opening_message)
-    while i < len(question_args):
-        if get_user_input(*question_args[i]) == 'p':
+    for question in question_args:
+        if get_user_input(*question) == 'p':
             answer_count = len(answers)
             answers_so_far = answers
             predicted_columns = fill_missing_columns(answers)
@@ -231,8 +232,15 @@ def intermediate():
 
         elif len(answers) == 9:
             converted = convert_answers(answers)
-            prediction(clf, converted)
-        i += 1
+            predicted_team = prediction(clf, converted)[0]
+            predicted_team_number = prediction(clf, converted)[1]
+            print("Based on your answers, your request will be sent to the " + predicted_team + " team.")
+            happy = check_if_happy(converted, predicted_team_number)
+            if happy == True:
+                break
+            else:
+                retrain(converted, happy)
+            break
 
     new_ticket_request()
 

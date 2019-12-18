@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="800ffc15-918a-4748-b28e-9de228965362" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/A4src/Advanced.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A4src/A4main.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/A4main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A4src/Basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/Basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A4src/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/Config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A4src/Intermediate.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/Intermediate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A4src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/Config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A4src/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/A4src/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_results/hidden_unit_model_results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demo_results/hidden_unit_model_results.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_1.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_1.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_10.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_10.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_2.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_2.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_3.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_3.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_4.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_4.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_5.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_5.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_6.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_6.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_7.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_7.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_8.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_8.joblib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hidden_unit_models/mynetwork_9.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/hidden_unit_models/mynetwork_9.joblib" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,11 +18,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5269006">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/A4src/Advanced.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="305">
-                  <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+                <state relative-caret-position="622">
+                  <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
                   </folding>
@@ -47,7 +33,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/env/lib/python3.7/site-packages/sklearn/utils/validation.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="395">
+                <state relative-caret-position="10980">
                   <caret line="748" selection-start-line="748" selection-end-line="748" />
                 </state>
               </provider>
@@ -56,7 +42,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/env/lib/python3.7/site-packages/sklearn/svm/_base.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1">
+                <state relative-caret-position="1920">
                   <caret line="147" selection-start-line="147" selection-end-line="147" />
                 </state>
               </provider>
@@ -65,8 +51,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="286">
-                  <caret line="120" column="19" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="19" />
+                <state relative-caret-position="379">
+                  <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
                   </folding>
@@ -86,8 +72,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/A4src/Intermediate.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+                <state relative-caret-position="140">
+                  <caret line="198" column="11" selection-start-line="198" selection-start-column="11" selection-end-line="198" selection-end-column="11" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
                   </folding>
@@ -95,11 +81,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/A4src/Config.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" selection-start-line="11" selection-end-line="11" />
+                <state relative-caret-position="930">
+                  <caret line="62" column="56" lean-forward="true" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
                 </state>
               </provider>
             </entry>
@@ -120,8 +106,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/A4src/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="889">
-                  <caret line="85" column="41" lean-forward="true" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
+                <state relative-caret-position="414">
+                  <caret line="106" column="75" selection-start-line="106" selection-start-column="75" selection-end-line="106" selection-end-column="75" />
                 </state>
               </provider>
             </entry>
@@ -157,10 +143,11 @@
         <option value="$PROJECT_DIR$/A4src/configuration.py" />
         <option value="$PROJECT_DIR$/A4src/A4main.py" />
         <option value="$PROJECT_DIR$/A4src/config.py" />
-        <option value="$PROJECT_DIR$/A4src/Intermediate.py" />
-        <option value="$PROJECT_DIR$/A4src/test.py" />
         <option value="$PROJECT_DIR$/A4src/Basic.py" />
         <option value="$PROJECT_DIR$/A4src/Advanced.py" />
+        <option value="$PROJECT_DIR$/A4src/test.py" />
+        <option value="$PROJECT_DIR$/A4src/Intermediate.py" />
+        <option value="$PROJECT_DIR$/A4src/Config.py" />
       </list>
     </option>
   </component>
@@ -237,7 +224,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Advanced">
+  <component name="RunManager" selected="Python.Intermediate (A4main) ">
     <configuration name="Advanced" type="PythonConfigurationType" factoryName="Python">
       <module name="A4-Artificial Neural Networks-Ticketing Agent" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -431,14 +418,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0985767" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32979852" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34888652" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39342523" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997879" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -512,11 +498,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/test.py</url>
           <line>6</line>
           <option name="timeStamp" value="20" />
@@ -557,94 +538,44 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>227</line>
-          <option name="timeStamp" value="45" />
+          <url>file://$PROJECT_DIR$/A4src/Advanced.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="48" />
+          <line>233</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>203</line>
-          <option name="timeStamp" value="50" />
+          <line>232</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>206</line>
-          <option name="timeStamp" value="51" />
+          <line>241</line>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>207</line>
-          <option name="timeStamp" value="52" />
+          <line>237</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>208</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>204</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>217</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>216</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>155</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>146</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>149</line>
-          <option name="timeStamp" value="61" />
+          <line>170</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
           <line>192</line>
-          <option name="timeStamp" value="62" />
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>195</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>194</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>223</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Intermediate.py</url>
-          <line>228</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/A4src/Advanced.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="67" />
+          <line>10</line>
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -721,44 +652,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A4src/test.py">
+    <entry file="file://$PROJECT_DIR$/A4src/Advanced.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/A4src/Intermediate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        <state relative-caret-position="622">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/lib/python3.7/site-packages/sklearn/svm/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="147" selection-start-line="147" selection-end-line="147" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/env/lib/python3.7/site-packages/sklearn/utils/validation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
+        <state relative-caret-position="10980">
           <caret line="748" selection-start-line="748" selection-end-line="748" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
+    <entry file="file://$PROJECT_DIR$/env/lib/python3.7/site-packages/sklearn/svm/_base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="120" column="19" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1920">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
         </state>
       </provider>
     </entry>
@@ -769,20 +683,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A4src/Config.py">
+    <entry file="file://$PROJECT_DIR$/A4src/Basic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="379">
+          <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A4src/Advanced.py">
+    <entry file="file://$PROJECT_DIR$/A4src/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A4src/Intermediate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="198" column="11" selection-start-line="198" selection-start-column="11" selection-end-line="198" selection-end-column="11" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A4src/Config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="56" lean-forward="true" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
         </state>
       </provider>
     </entry>

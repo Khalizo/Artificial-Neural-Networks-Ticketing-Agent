@@ -102,3 +102,6 @@ def team_allocate(predicted_team_number):
     print("Thank you for your patience, your request will be sent to the " + selected_team + " team.\n"
                                                                                              "To help improve our system please answer the remaining question(s)")
     return selected_team_encoded
+
+
+<class 'list'>: ['yes', 'yes', 'no', 'no', 'yes', 'no', 'yes', 'no', 'yes']
