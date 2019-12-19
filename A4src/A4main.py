@@ -1,5 +1,6 @@
-from A4src.Basic import *
-from A4src.Intermediate import *
+from Basic import *
+from Intermediate import *
+from Advanced import *
 import sys
 
 # Setting up command line arguments
@@ -7,17 +8,18 @@ args = sys.argv
 agent = args[1]
 
 
-# function for choosing the correct agent
 def choose_agent(argument):
+    """
+    Runs the agent of choice
+    :return: 
+    """""
     switcher = {
         'Bas': basic,
         'Int': intermediate,
-        'Adv': "Advanced",
+        'Adv': advanced,
     }
-# Get the function from switcher dictionary
     func = switcher.get(argument, lambda: "Invalid option")
-    # Execute the function
-    print(func())
+    return func()
 
 
 # Choose the agent
